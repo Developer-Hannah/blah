@@ -2,23 +2,64 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+interface BandProps {
+  name: string;
+  members: string;
+  formed: number;
+}
+
+const bandNames = [
+  {
+    name: 'Name1',
+    members: 'Name1',
+    formed: 'Name1',
+  },
+  {
+    name: 'Name2',
+    members: 'Name2',
+    formed: 'Name2',
+  },
+  {
+    name: 'Name3',
+    members: 'Name3',
+    formed: 'Name3',
+  },
+];
+
+function Welcome() {
+  return <h1>The Best Music Trios Ever</h1>;
+}
+
+class Band extends React.Component {
+  render() {
+    const oneBand = this.props;
+
+    return (
+      <div>
+        <img />
+        <h2>{oneBand.name}</h2>
+        <h3>Members: {oneBand.members}</h3>
+        <h3>Formed: {oneBand.formed}</h3>
+      </div>
+    );
+  }
+}
+
+function BandList() {
+  return (
+    <div>
+      <Band {...bandNames[0]} />
+      <Band {...bandNames[1]} />
+      <Band {...bandNames[2]} />
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Welcome />
+      <BandList />
     </div>
   );
 }
