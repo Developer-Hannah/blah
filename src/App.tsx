@@ -1,13 +1,9 @@
+// imports
 import React from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import jsonData from './CollegeBasketballTeams.json';
 
-//interface BandProps {
-//name: string;
-//members: string;
-//formed: string;
-//}
+// create interface so that program knows varriable types
 interface TeamProps {
   school: string;
   name: string;
@@ -15,43 +11,15 @@ interface TeamProps {
   state: string;
 }
 
-//const bandNames = [
-//{
-//name: 'Name1',
-//members: 'Name1',
-//formed: 'Name1',
-//},
-//{
-//name: 'Name2',
-////members: 'Name2',
-//formed: 'Name2',
-//},
-//{
-//name: 'Name3',
-//members: 'Name3',
-//formed: 'Name3',
-//},
-//];
+// pull in date and set to myData varriable
 const myData = jsonData.teams;
 
+// create function to display heading and introduce user to page
 function Welcome() {
-  return <h1>The Best Music Trios Ever</h1>;
+  return <h1>Information on colleges in NCAA Basketball</h1>;
 }
 
-//class Band extends React.Component<BandProps> {
-//render() {
-//const oneBand = this.props;
-
-//return (
-//<div>
-//<img />
-//<h2>{oneBand.name}</h2>
-//<h3>Members: {oneBand.members}</h3>
-//<h3>Formed: {oneBand.formed}</h3>
-//</div>
-//);
-//}
-//}
+// create component to represent one team
 class Team extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -69,15 +37,7 @@ class Team extends React.Component<TeamProps> {
   }
 }
 
-//function BandList() {
-//return (
-//<div>
-//{bandNames.map((oneBand) => (
-//<Band {...oneBand} />
-//))}
-//</div>
-//);
-//}
+// create function to show list of teams
 function TeamList() {
   return (
     <div>
@@ -88,15 +48,7 @@ function TeamList() {
   );
 }
 
-//function App() {
-//return (
-//<div className="App">
-//<Welcome />
-//<BandList />
-//</div>
-//);
-//}
-
+// app function
 function App() {
   return (
     <div className="App">
