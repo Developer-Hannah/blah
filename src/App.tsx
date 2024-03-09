@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 interface BandProps {
   name: string;
   members: string;
-  formed: number;
+  formed: string;
 }
 
 const bandNames = [
@@ -30,7 +30,7 @@ function Welcome() {
   return <h1>The Best Music Trios Ever</h1>;
 }
 
-class Band extends React.Component {
+class Band extends React.Component<BandProps> {
   render() {
     const oneBand = this.props;
 
